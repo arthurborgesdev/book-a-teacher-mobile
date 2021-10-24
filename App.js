@@ -26,6 +26,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import Teachers from './Teachers';
+
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
@@ -85,6 +87,7 @@ const App: () => Node = () => {
           </Section>
           <LearnMoreLinks />
         </View>
+        <Teachers />
       </ScrollView>
     </SafeAreaView>
   );
