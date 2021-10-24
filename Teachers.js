@@ -1,30 +1,16 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { useGetTeachersQuery } from './services/teacher';
 
 const Teachers = () => {
-  const data = [
-    {
-      id: 1,
-      name: 'Arthur',
-      details: 'I like teaching',
-      subject: 'React'
-    },
-    {
-      id: 2,
-      name: 'Fernando',
-      details: 'I study hard and teach harder!',
-      subject: 'Rails'
-    },
-    {
-      id: 3,
-      name: 'Andressa',
-      details: "I'm good at marketing",
-      subject: 'UX Writter'
-    },
-  ];
+  const { data, error, isLoading } = useGetTeachersQuery();
   return (
     <View>
-      {
+      {error ? (
+        <Text>Oh no, there was an error</Text>
+      ) : isLoading ? (
+        <Text>Loading...</Text>
+      ) : data ? (
         data.map((teacher) => ( 
           <View 
             key={teacher.id} 
@@ -38,7 +24,8 @@ const Teachers = () => {
             <Text style={{fontSize: 20}}>Subject: {teacher.subject}</Text>
           </View>
         ))
-      }
+      ) : null}
+      
     </View>
   );
 };
