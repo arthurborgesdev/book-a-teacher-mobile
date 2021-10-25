@@ -26,8 +26,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './app/store';
 
+import PizzaTranslator from './PizzaTranslator';
 import Teachers from './Teachers';
 
 const Section = ({children, title}): Node => {
@@ -90,6 +91,7 @@ const App: () => Node = () => {
             </Section>
             <LearnMoreLinks />
           </View>
+          <PizzaTranslator />
           <Teachers />
         </ScrollView>
       </SafeAreaView>
