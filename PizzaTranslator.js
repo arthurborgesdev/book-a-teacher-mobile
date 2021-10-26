@@ -9,7 +9,7 @@ const PizzaTranslator = () => {
         style={{height: 40}}
         placeholder="Type here to translate!"
         onChangeText={text => setText(text)}
-        defaulValue={text}
+        value={text}
       />
       <Text style={{padding: 10, fontSize: 42}}>
         {text.split(' ').map((word) => word && '🍕').join(' ')}

@@ -31,6 +31,7 @@ import store from './app/store';
 import ReactNativeDemo from './ReactNativeDemo';
 import PizzaTranslator from './PizzaTranslator';
 import Teachers from './Teachers';
+import ScrollViewExample from './ScrollViewExample';
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -51,6 +52,7 @@ const App: () => Node = () => {
           {// ReactNati/eDemo
           }
           <PizzaTranslator />
+          <ScrollViewExample />
           <Teachers />
         </ScrollView>
       </SafeAreaView>
