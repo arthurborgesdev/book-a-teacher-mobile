@@ -8,9 +8,6 @@ const ScrollViewExample = () => (
     <PizzaTranslator />
     <PizzaTranslator />
     <PizzaTranslator />
-    <PizzaTranslator />
-    <PizzaTranslator />
-    <PizzaTranslator />
   </ScrollView>
 );
 
