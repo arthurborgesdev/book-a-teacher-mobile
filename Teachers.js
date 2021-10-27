@@ -1,9 +1,20 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import { useGetTeachersQuery } from './services/teacher';
+import {Text, View, StyleSheet} from 'react-native';
+import {useGetTeachersQuery} from './services/teacher';
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'green',
+    padding: 20,
+    margin: 10,
+  },
+  item: {
+    fontSize: 20,
+  },
+});
 
 const Teachers = () => {
-  const { data, error, isLoading } = useGetTeachersQuery();
+  const {data, error, isLoading} = useGetTeachersQuery();
   return (
     <View>
       {error ? (
@@ -11,21 +22,14 @@ const Teachers = () => {
       ) : isLoading ? (
         <Text>Loading...</Text>
       ) : data ? (
-        data.map((teacher) => ( 
-          <View 
-            key={teacher.id} 
-            style={{
-              backgroundColor: 'green', 
-              padding: 20,
-              margin: 10,
-            }}>
-            <Text style={{fontSize: 20}}>Name: {teacher.name}</Text>
-            <Text style={{fontSize: 20}}>Details: {teacher.details}</Text>
-            <Text style={{fontSize: 20}}>Subject: {teacher.subject}</Text>
+        data.map(teacher => (
+          <View key={teacher.id} style={styles.container}>
+            <Text style={styles.item}>Name: {teacher.name}</Text>
+            <Text style={styles.item}>Details: {teacher.details}</Text>
+            <Text style={styles.item}>Subject: {teacher.subject}</Text>
           </View>
         ))
       ) : null}
-      
     </View>
   );
 };
