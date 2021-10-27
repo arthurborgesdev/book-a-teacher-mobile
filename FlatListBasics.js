@@ -1,10 +1,9 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 22
+    paddingTop: 22,
   },
   item: {
     padding: 10,
@@ -13,7 +12,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const FlatListExample = () => {
+const FlatListBasics = () => {
   return (
     <View style={styles.container}>
       <FlatList
@@ -33,6 +32,6 @@ const FlatListExample = () => {
       />
     </View>
   );
-}
+};
 
-export default FlatListExample;
+export default FlatListBasics;
