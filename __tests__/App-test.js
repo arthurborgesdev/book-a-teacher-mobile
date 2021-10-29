@@ -10,6 +10,7 @@ import PizzaTranslator from '../PizzaTranslator';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
+import ScrollViewExample from '../ScrollViewExample';
 
 jest.useFakeTimers();
 
@@ -23,4 +24,8 @@ it('renders the FlatListBasics correctly', () => {
 
 it('renders the PizzaTranslator correctly', () => {
   renderer.create(<PizzaTranslator />);
+});
+
+it('renders the ScrollViewExample correctly', () => {
+  renderer.create(<ScrollViewExample />);
 });
